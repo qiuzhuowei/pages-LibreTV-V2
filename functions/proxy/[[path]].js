@@ -9,7 +9,7 @@
 // PASSWORD (例如 "your_password") - 鉴权密码（可选，如果不设置则使用固定密码）
 
 // 🔐 固定密码配置 - 修改这里设置你的自定义密码
-const FIXED_PASSWORD = 'admin123'; // 🔥 修改这里设置自定义密码
+const FIXED_PASSWORD = 'rgbhjjo'; // 🔥 修改这里设置自定义密码
 
 // 动态密码获取函数
 function getServerPassword(env) {
@@ -34,11 +34,11 @@ const MEDIA_CONTENT_TYPES = ['video/', 'audio/', 'image/'];
  * 拦截发往 /proxy/* 的请求
  */
 export async function onRequest(context) {
-    const { request, env, next, waitUntil } = context; // next 和 waitUntil 可能需要
-    const url = new URL(request.url);
+    const { 请求, env, next, waitUntil } = context; // next 和 waitUntil 可能需要
+    const url = new 网站(请求.url);
 
     // 验证鉴权（主函数调用）
-    const isValidAuth = await validateAuth(request, env);
+    const isValidAuth = await validateAuth(请求, env);
     if (!isValidAuth) {
         return new Response(JSON.stringify({
             success: false,
@@ -82,8 +82,8 @@ export async function onRequest(context) {
     // --- 辅助函数 ---
 
     // 验证代理请求的鉴权
-    async function validateAuth(request, env) {
-        const url = new URL(request.url);
+    async function validateAuth(请求, env) {
+        const url = new 网站(请求.url);
         const authHash = url.searchParams.get('auth');
         const timestamp = url.searchParams.get('t');
         
